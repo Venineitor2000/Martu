@@ -19,27 +19,3 @@
    -1px 1px 0 #fff,
     1px 1px 0 #fff;
 }
-
-@media screen and (max-width: 1080px){
-    #contenedor{
-        width: 900%;
-    }
-    #contenido{
-        width: 600%;
-    }
-    #barra_lateral{
-        width:300%;
-    }
-}
-
-@media screen and (max-width: 480px){
-    #encabezado{
-        height: auto;
-    }
-    #contenido{
-        width: auto;
-    }
-    #barra_lateral{
-        display:none;
-    }
-}
