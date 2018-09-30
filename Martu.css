@@ -1,0 +1,21 @@
+#Ja
+{
+  color: gold;
+  text-align: center;
+  text-shadow:
+   -1px -1px 0 #000,
+    1px -1px 0 #000,
+   -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+#Ju
+{
+  color: blue;
+  text-align: center;
+  font-size: 500%;
+  text-shadow:
+   -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+   -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
