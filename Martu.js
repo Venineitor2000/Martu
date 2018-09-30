@@ -6,8 +6,8 @@ var estilo_Ja = document.getElementById("estilo_Ja");
 
 var meses = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-var dia_deseado = [31];
-var mes_deseado = [9];
+var dia_deseado = [20];
+var mes_deseado = [10];
 
 var fecha_proxima; //FALTA USAR
 
@@ -156,7 +156,7 @@ function Tiempo() //Calcula y controla todo
   else
   {
     parrafo_dias_faltantes.innerHTML = dias_faltantes;
-    estilo_Ja.innerHTML = "#Ja{font-size:1000%;}" + "body{background: linear-gradient(cyan, purple);}"; //PROBANDO DE CAMBIAR TODOS LOS #Ja POR TAMAÑO 2000 EN VEZ DE 1000
+    estilo_Ja.innerHTML = "#Ja{font-size:1000%;}" + "body{background: linear-gradient(cyan, purple);}"; 
   }
   parrafo_cuenta_regresvia.innerHTML = (24 - horas  - 1 ) + ":" + (60 - minutos) + ":" + (60 - segundos); //El -1 en las horas es por que las 12 de la noche cuentan como 0 asi que queda en 25 el contador
 }
@@ -164,8 +164,3 @@ function Tiempo() //Calcula y controla todo
 Tiempo();
 
 setInterval(Tiempo, 1000)
-
-
-
-
-//hoy es 10, mes 9, y quiero el dia 17 del 11/ cantidad de dias del mes 9 son 31, cantidad de dias del mes 10 son 30
