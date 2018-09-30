@@ -20,7 +20,7 @@
     1px 1px 0 #fff;
 }
 
-@media screen and (max-width: 980px){
+@media screen and (max-width: 1080px){
     #contenedor{
         width: 900%;
     }
