@@ -19,3 +19,16 @@
    -1px 1px 0 #fff,
     1px 1px 0 #fff;
 }
+
+
+@media screen and (max-width: 880px){
+    #encabezado{
+        height: auto;
+    }
+    #contenido{
+        width: auto;
+    }
+    #barra_lateral{
+        display:none;
+    }
+}
