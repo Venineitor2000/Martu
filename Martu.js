@@ -154,7 +154,7 @@ function Tiempo() //Calcula y controla todo
   else
   {
     parrafo_dias_faltantes.innerHTML = dias_faltantes;
-    estilo_Ja.innerHTML = "#Ja{font-size:1000%;}" + "body{background: linear-gradient(cyan, purple);}"; //PROBANDO DE CAMBIAR TODOS LOS #Ja POR TAMAÑO 2000 EN VEZ DE 1000
+    estilo_Ja.innerHTML = "#Ja{font-size:1500%;}" + "body{background: linear-gradient(cyan, purple);}"; //PROBANDO DE CAMBIAR TODOS LOS #Ja POR TAMAÑO 2000 EN VEZ DE 1000
   }
   parrafo_cuenta_regresvia.innerHTML = (24 - horas  - 1 ) + ":" + (60 - minutos) + ":" + (60 - segundos); //El -1 en las horas es por que las 12 de la noche cuentan como 0 asi que queda en 25 el contador
 }
