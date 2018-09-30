@@ -12,10 +12,22 @@
 {
   color: blue;
   text-align: center;
-  font-size: 15000%;
+  font-size: 500%;
   text-shadow:
    -1px -1px 0 #fff,
     1px -1px 0 #fff,
    -1px 1px 0 #fff,
     1px 1px 0 #fff;
+}
+
+@media screen and (min-width: 970px) {
+    #toBeFilled {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+    .contenidoTitulo {
+    font-size: 2vw;
+  }
 }
