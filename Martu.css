@@ -22,13 +22,13 @@
 
 @media screen and (max-width: 980px){
     #contenedor{
-        width: 110%;
+        width: 900%;
     }
     #contenido{
-        width: 80%;
+        width: 600%;
     }
     #barra_lateral{
-        width:50%;
+        width:300%;
     }
 }
 
