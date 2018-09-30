@@ -20,14 +20,26 @@
     1px 1px 0 #fff;
 }
 
-@media screen and (min-width: 970px) {
-    #toBeFilled {
-    font-size: 30px;
-  }
+@media screen and (max-width: 980px){
+    #contenedor{
+        width: 90%;
+    }
+    #contenido{
+        width: 60%;
+    }
+    #barra_lateral{
+        width:30%;
+    }
 }
 
-@media screen and (max-width: 800px) {
-    .contenidoTitulo {
-    font-size: 2vw;
-  }
+@media screen and (max-width: 480px){
+    #encabezado{
+        height: auto;
+    }
+    #contenido{
+        width: auto;
+    }
+    #barra_lateral{
+        display:none;
+    }
 }
