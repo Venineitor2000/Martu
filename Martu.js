@@ -1,10 +1,4 @@
-var device = navigator.userAgent
-
-if (device.match(/Iphone/i)|| device.match(/Ipod/i)|| device.match(/Android/i)|| device.match(/J2ME/i)|| device.match(/BlackBerry/i)|| device.match(/iPhone|iPad|iPod/i)|| device.match(/Opera Mini/i)|| device.match(/IEMobile/i)|| device.match(/Mobile/i)|| device.match(/Windows Phone/i)|| device.match(/windows mobile/i)|| device.match(/windows ce/i)|| device.match(/webOS/i)|| device.match(/palm/i)|| device.match(/bada/i)|| device.match(/series60/i)|| device.match(/nokia/i)|| device.match(/symbian/i)|| device.match(/HTC/i)|| device.match(/CriOS/i))
- {alert("Hola")}
- else{alert("No, hola")}
-
-
+var device = navigator.userAgent //Esta variable es para despues comprobar si se esta en celu o no
 var parrafo_dias_faltantes = document.getElementById("Ja");
 var parrafo_cuenta_regresvia = document.getElementById("Ju");
 var estilo_Ju = document.getElementById("estilo_Ju");
@@ -147,9 +141,17 @@ function Tiempo() //Calcula y controla todo
   }
 
   if(dias_faltantes == 0)
-  {
-    parrafo_dias_faltantes.innerHTML = mensajes[0];
-     estilo_Ja.innerHTML = "#Ja{font-size:250%;}" + "body{background: radial-gradient(cyan, purple);}";
+  { //Se ajusta el tamaño de el mensaeje segun si se esta en celu o no
+    if (device.match(/Iphone/i)|| device.match(/Ipod/i)|| device.match(/Android/i)|| device.match(/J2ME/i)|| device.match(/BlackBerry/i)|| device.match(/iPhone|iPad|iPod/i)|| device.match(/Opera Mini/i)|| device.match(/IEMobile/i)|| device.match(/Mobile/i)|| device.match(/Windows Phone/i)|| device.match(/windows mobile/i)|| device.match(/windows ce/i)|| device.match(/webOS/i)|| device.match(/palm/i)|| device.match(/bada/i)|| device.match(/series60/i)|| device.match(/nokia/i)|| device.match(/symbian/i)|| device.match(/HTC/i)|| device.match(/CriOS/i))
+     {
+       parrafo_dias_faltantes.innerHTML = mensajes[0];
+       estilo_Ja.innerHTML = "#Ja{font-size:250%;}" + "body{background: radial-gradient(cyan, purple);}";
+     }
+     else
+     {
+       parrafo_dias_faltantes.innerHTML = mensajes[0];
+       estilo_Ja.innerHTML = "#Ja{font-size:400%;}" + "body{background: radial-gradient(cyan, purple);}";
+     }
   }
   else
   {
