@@ -12,8 +12,8 @@ var estilo_Ja = document.getElementById("estilo_Ja");
 
 var meses = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-var mes_deseado = [10];
-var dia_deseado = [31];
+var dia_deseado = [30];
+var mes_deseado = [9];
 
 var fecha_proxima; //FALTA USAR
 
