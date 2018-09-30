@@ -142,12 +142,12 @@ function Tiempo() //Calcula y controla todo
   if(dias_faltantes == 0)
   {
     parrafo_dias_faltantes.innerHTML = mensajes[0];
-     estilo_Ja.innerHTML = "#Ja{font-size:500%;}" + "body{background: radial-gradient(cyan, purple);}";
+     estilo_Ja.innerHTML = "#Ja{font-size:1000%;}" + "body{background: radial-gradient(cyan, purple);}";
   }
   else
   {
     parrafo_dias_faltantes.innerHTML = dias_faltantes; //FALTA PONER QUE SEA DIA FATANTES CUANDO ESTE LISTO Y ENVIAR ESTO ABAJO PARA QUE SE PONGA ACTUALIZADO
-    estilo_Ja.innerHTML = "#Ja{font-size:1000%;}" + "body{background: linear-gradient(cyan, purple);}";
+    estilo_Ja.innerHTML = "#Ja{font-size:1500%;}" + "body{background: linear-gradient(cyan, purple);}";
   }
   parrafo_cuenta_regresvia.innerHTML = (24 - horas  - 1 ) + ":" + (60 - minutos) + ":" + (60 - segundos); //El -1 en las horas es por que las 12 de la noche cuentan como 0 asi que queda en 25 el contador
 }
