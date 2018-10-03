@@ -6,10 +6,10 @@ var estilo_Ja = document.getElementById("estilo_Ja");
 
 var meses = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-var dia_deseado = [20];
 var mes_deseado = [10];
+var dia_deseado = [20];
 
-var fecha_proxima; //FALTA USAR
+var fecha_proxima; //Representa la ubicacion de los array (dia_deseado, mes_deseado, mensajes) para saber cuales tomar para los calculos
 
 var dias_faltantes;
 
@@ -46,117 +46,134 @@ function Tiempo() //Calcula y controla todo
   var minutos = fecha.getMinutes();
   var segundos = fecha.getSeconds();
 
-  if(mes_deseado[0] - 1 == mes && dia_deseado[0] >= dia) //Se resta 1 en mes_deseado debido a que la variable mes los cuenta del 0 al 11
-  {
-    dias_faltantes = dia_deseado[0]- dia;
-  }
-  else if(mes_deseado[0] -1 > mes) //Se resta 1 en mes_deseado debido a que la variable mes los cuenta del 0 al 11
-  {
-    switch (mes_deseado[0] - 1 - mes)
+  for(i = 0; i < mes_deseado.length; i++) //Calcula cual es la fecha_proxima
+{
+    if(mes_deseado[i] - 1 > mes)
     {
-      case 1: dias_faltantes = meses[mes] + dia_deseado[0] - dia
+        fecha_proxima = i;
+        i= mes_deseado.length;
+    }
+    else if(mes_deseado[i] - 1 == mes)
+    {
+        if(dia_deseado[i] >= dia)
+        {
+            fecha_proxima = i;
+            i = mes_deseado.lengtht;
+        }
+    }
+}
+
+  if(mes_deseado[fecha_proxima] - 1 == mes && dia_deseado[fecha_proxima] >= dia) //Se resta 1 en mes_deseado debido a que la variable mes los cuenta del 0 al 11
+  {
+    dias_faltantes = dia_deseado[fecha_proxima]- dia;
+  }
+  else if(mes_deseado[fecha_proxima] -1 > mes) //Se resta 1 en mes_deseado debido a que la variable mes los cuenta del 0 al 11
+  {
+    switch (mes_deseado[fecha_proxima] - 1 - mes)
+    {
+      case 1: dias_faltantes = meses[mes] + dia_deseado[fecha_proxima] - dia
       break;
 
-      case 2: dias_faltantes = meses[mes] + meses[mes + 1] + dia_deseado[0] - dia
+      case 2: dias_faltantes = meses[mes] + meses[mes + 1] + dia_deseado[fecha_proxima] - dia
       break;
 
-      case 3: dias_faltantes = meses[mes] + meses[mes + 1] + meses[mes + 2] + dia_deseado[0] - dia
+      case 3: dias_faltantes = meses[mes] + meses[mes + 1] + meses[mes + 2] + dia_deseado[fecha_proxima] - dia
       break;
 
-      case 4: dias_faltantes = meses[mes] + meses[mes + 1] + meses[mes + 2] + meses[mes + 3] + dia_deseado[0] - dia
+      case 4: dias_faltantes = meses[mes] + meses[mes + 1] + meses[mes + 2] + meses[mes + 3] + dia_deseado[fecha_proxima] - dia
       break;
 
-      case 5: dias_faltantes = meses[mes] + meses[mes + 1] + meses[mes + 2] + meses[mes + 3] + meses[mes + 4] + dia_deseado[0] - dia
+      case 5: dias_faltantes = meses[mes] + meses[mes + 1] + meses[mes + 2] + meses[mes + 3] + meses[mes + 4] + dia_deseado[fecha_proxima] - dia
       break;
 
-      case 6: dias_faltantes = meses[mes] + meses[mes + 1] + meses[mes + 2] + meses[mes + 3] + meses[mes + 4] + meses[mes + 5] + dia_deseado[0] - dia
+      case 6: dias_faltantes = meses[mes] + meses[mes + 1] + meses[mes + 2] + meses[mes + 3] + meses[mes + 4] + meses[mes + 5] + dia_deseado[fecha_proxima] - dia
       break;
 
-      case 7: dias_faltantes = meses[mes] + meses[mes + 1] + meses[mes + 2] + meses[mes + 3] + meses[mes + 4] + meses[mes + 5] + meses[mes + 6] + dia_deseado[0] - dia
+      case 7: dias_faltantes = meses[mes] + meses[mes + 1] + meses[mes + 2] + meses[mes + 3] + meses[mes + 4] + meses[mes + 5] + meses[mes + 6] + dia_deseado[fecha_proxima] - dia
       break;
 
-      case 8: dias_faltantes = meses[mes] + meses[mes + 1] + meses[mes + 2] + meses[mes + 3] + meses[mes + 4] + meses[mes + 5] + meses[mes + 6] + meses[mes + 7] + dia_deseado[0] - dia
+      case 8: dias_faltantes = meses[mes] + meses[mes + 1] + meses[mes + 2] + meses[mes + 3] + meses[mes + 4] + meses[mes + 5] + meses[mes + 6] + meses[mes + 7] + dia_deseado[fecha_proxima] - dia
       break;
 
-      case 9: dias_faltantes = meses[mes] + meses[mes + 1] + meses[mes + 2] + meses[mes + 3] + meses[mes + 4] + meses[mes + 5] + meses[mes + 6] + meses[mes + 7] + meses[mes + 8] + dia_deseado[0] - dia
+      case 9: dias_faltantes = meses[mes] + meses[mes + 1] + meses[mes + 2] + meses[mes + 3] + meses[mes + 4] + meses[mes + 5] + meses[mes + 6] + meses[mes + 7] + meses[mes + 8] + dia_deseado[fecha_proxima] - dia
       break;
 
-      case 10: dias_faltantes = meses[mes] + meses[mes + 1] + meses[mes + 2] + meses[mes + 3] + meses[mes + 4] + meses[mes + 5] + meses[mes + 6] + meses[mes + 7] + meses[mes + 8] + meses[mes + 9] + dia_deseado[0] - dia
+      case 10: dias_faltantes = meses[mes] + meses[mes + 1] + meses[mes + 2] + meses[mes + 3] + meses[mes + 4] + meses[mes + 5] + meses[mes + 6] + meses[mes + 7] + meses[mes + 8] + meses[mes + 9] + dia_deseado[fecha_proxima] - dia
       break;
 
-      case 11: dias_faltantes = meses[mes] + meses[mes + 1] + meses[mes + 2] + meses[mes + 3] + meses[mes + 4] + meses[mes + 5] + meses[mes + 6] + meses[mes + 7] + meses[mes + 8] + meses[mes + 9] + meses[mes + 10] + dia_deseado[0] - dia
+      case 11: dias_faltantes = meses[mes] + meses[mes + 1] + meses[mes + 2] + meses[mes + 3] + meses[mes + 4] + meses[mes + 5] + meses[mes + 6] + meses[mes + 7] + meses[mes + 8] + meses[mes + 9] + meses[mes + 10] + dia_deseado[fecha_proxima] - dia
       break;
     }
   }
-  else if(mes_deseado[0] - 1 == mes && dia_deseado[0] < dia) //Se resta 1 en mes_deseado debido a que la variable mes los cuenta del 0 al 11
+  else if(mes_deseado[fecha_proxima] - 1 == mes && dia_deseado[fecha_proxima] < dia) //Se resta 1 en mes_deseado debido a que la variable mes los cuenta del 0 al 11
   {
-    dias_faltantes = 365 + dia_deseado[0] - dia
+    dias_faltantes = 365 + dia_deseado[fecha_proxima] - dia
   }
-  else if(mes_deseado[0] - 1 < mes)
+  else if(mes_deseado[fecha_proxima] - 1 < mes)
   {
-    switch (mes - (mes_deseado[0] - 1))
+    switch (mes - (mes_deseado[fecha_proxima] - 1))
     {
-      case 1: dias_faltantes = 365 + dia_deseado[0] - meses[mes - 1] - dia
+      case 1: dias_faltantes = 365 + dia_deseado[fecha_proxima] - meses[mes - 1] - dia
       break;
 
-      case 2: dias_faltantes = 365 + dia_deseado[0] - meses[mes - 1] - meses[mes - 2] - dia
+      case 2: dias_faltantes = 365 + dia_deseado[fecha_proxima] - meses[mes - 1] - meses[mes - 2] - dia
       break;
 
-      case 3: dias_faltantes = 365 + dia_deseado[0] - meses[mes - 1] - meses[mes - 2] - meses[mes - 3] - dia
+      case 3: dias_faltantes = 365 + dia_deseado[fecha_proxima] - meses[mes - 1] - meses[mes - 2] - meses[mes - 3] - dia
       break;
 
-      case 4: dias_faltantes = 365 + dia_deseado[0] - meses[mes - 1] - meses[mes - 2] - meses[mes - 3] - meses[mes - 4] - dia
+      case 4: dias_faltantes = 365 + dia_deseado[fecha_proxima] - meses[mes - 1] - meses[mes - 2] - meses[mes - 3] - meses[mes - 4] - dia
       break;
 
-      case 5: dias_faltantes = 365 + dia_deseado[0] - meses[mes - 1] - meses[mes - 2] - meses[mes - 3] - meses[mes - 4] - meses[mes - 5] - dia
+      case 5: dias_faltantes = 365 + dia_deseado[fecha_proxima] - meses[mes - 1] - meses[mes - 2] - meses[mes - 3] - meses[mes - 4] - meses[mes - 5] - dia
       break;
 
-      case 6: dias_faltantes = 365 + dia_deseado[0] - meses[mes - 1] - meses[mes - 2] - meses[mes - 3] - meses[mes - 4] - meses[mes - 5] - meses[mes - 6] - dia
+      case 6: dias_faltantes = 365 + dia_deseado[fecha_proxima] - meses[mes - 1] - meses[mes - 2] - meses[mes - 3] - meses[mes - 4] - meses[mes - 5] - meses[mes - 6] - dia
       break;
 
-      case 7: dias_faltantes = 365 + dia_deseado[0] - meses[mes - 1] - meses[mes - 2] - meses[mes - 3] - meses[mes - 4] - meses[mes - 5] - meses[mes - 6] - meses[mes - 7] - dia
+      case 7: dias_faltantes = 365 + dia_deseado[fecha_proxima] - meses[mes - 1] - meses[mes - 2] - meses[mes - 3] - meses[mes - 4] - meses[mes - 5] - meses[mes - 6] - meses[mes - 7] - dia
       break;
 
-      case 8: dias_faltantes = 365 + dia_deseado[0] - meses[mes - 1] - meses[mes - 2] - meses[mes - 3] - meses[mes - 4] - meses[mes - 5] - meses[mes - 6] - meses[mes - 7] - meses[mes - 8] - dia
+      case 8: dias_faltantes = 365 + dia_deseado[fecha_proxima] - meses[mes - 1] - meses[mes - 2] - meses[mes - 3] - meses[mes - 4] - meses[mes - 5] - meses[mes - 6] - meses[mes - 7] - meses[mes - 8] - dia
       break;
 
-      case 9: dias_faltantes = 365 + dia_deseado[0] - meses[mes - 1] - meses[mes - 2] - meses[mes - 3] - meses[mes - 4] - meses[mes - 5] - meses[mes - 6] - meses[mes - 7] - meses[mes - 8] - meses[mes - 9] - dia
+      case 9: dias_faltantes = 365 + dia_deseado[fecha_proxima] - meses[mes - 1] - meses[mes - 2] - meses[mes - 3] - meses[mes - 4] - meses[mes - 5] - meses[mes - 6] - meses[mes - 7] - meses[mes - 8] - meses[mes - 9] - dia
       break;
 
-      case 10: dias_faltantes = 365 + dia_deseado[0] - meses[mes - 1] - meses[mes - 2] - meses[mes - 3] - meses[mes - 4] - meses[mes - 5] - meses[mes - 6] - meses[mes - 7] - meses[mes - 8] - meses[mes - 9] - meses[mes - 10] - dia
+      case 10: dias_faltantes = 365 + dia_deseado[fecha_proxima] - meses[mes - 1] - meses[mes - 2] - meses[mes - 3] - meses[mes - 4] - meses[mes - 5] - meses[mes - 6] - meses[mes - 7] - meses[mes - 8] - meses[mes - 9] - meses[mes - 10] - dia
       break;
 
-      case 11: dias_faltantes = 365 + dia_deseado[0] - meses[mes - 1] - meses[mes - 2] - meses[mes - 3] - meses[mes - 4] - meses[mes - 5] - meses[mes - 6] - meses[mes - 7] - meses[mes - 8] - meses[mes - 9] - meses[mes - 10] - meses[mes - 11] - dia
+      case 11: dias_faltantes = 365 + dia_deseado[fecha_proxima] - meses[mes - 1] - meses[mes - 2] - meses[mes - 3] - meses[mes - 4] - meses[mes - 5] - meses[mes - 6] - meses[mes - 7] - meses[mes - 8] - meses[mes - 9] - meses[mes - 10] - meses[mes - 11] - dia
       break;
     }
   }
 
   if(dias_faltantes == 1)
   {
-    estilo_Ju.innerHTML = "#Ju{opacity: 1;}";
+    estilo_Ju.innerHTML = "#Ju{opacity: 1;}"; //Muestra el cronometro
   }
   else
   {
-    estilo_Ju.innerHTML = "#Ju{opacity: 0;}";
+    estilo_Ju.innerHTML = "#Ju{opacity: 0;}"; //Oculta el cronometro
   }
 
   if(dias_faltantes == 0)
   { //Se ajusta el tamaño de el mensaeje segun si se esta en celu o no
     if (device.match(/Iphone/i)|| device.match(/Ipod/i)|| device.match(/Android/i)|| device.match(/J2ME/i)|| device.match(/BlackBerry/i)|| device.match(/iPhone|iPad|iPod/i)|| device.match(/Opera Mini/i)|| device.match(/IEMobile/i)|| device.match(/Mobile/i)|| device.match(/Windows Phone/i)|| device.match(/windows mobile/i)|| device.match(/windows ce/i)|| device.match(/webOS/i)|| device.match(/palm/i)|| device.match(/bada/i)|| device.match(/series60/i)|| device.match(/nokia/i)|| device.match(/symbian/i)|| device.match(/HTC/i)|| device.match(/CriOS/i))
      {
-       parrafo_dias_faltantes.innerHTML = mensajes[0];
+       parrafo_dias_faltantes.innerHTML = mensajes[fecha_proxima];
        estilo_Ja.innerHTML = "#Ja{font-size:250%;}" + "body{background: radial-gradient(cyan, purple);}";
      }
      else
      {
-       parrafo_dias_faltantes.innerHTML = mensajes[0];
+       parrafo_dias_faltantes.innerHTML = mensajes[fecha_proxima];
        estilo_Ja.innerHTML = "#Ja{font-size:400%;}" + "body{background: radial-gradient(cyan, purple);}";
      }
   }
   else
   {
     parrafo_dias_faltantes.innerHTML = dias_faltantes;
-    estilo_Ja.innerHTML = "#Ja{font-size:1000%;}" + "body{background: linear-gradient(cyan, purple);}"; 
+    estilo_Ja.innerHTML = "#Ja{font-size:1000%;}" + "body{background: linear-gradient(cyan, purple);}";
   }
   parrafo_cuenta_regresvia.innerHTML = (24 - horas  - 1 ) + ":" + (60 - minutos) + ":" + (60 - segundos); //El -1 en las horas es por que las 12 de la noche cuentan como 0 asi que queda en 25 el contador
 }
