@@ -13,7 +13,9 @@ var fecha_proxima; //Representa la ubicacion de los array (dia_deseado, mes_dese
 
 var dias_faltantes;
 
-var cumple = "Bueno bueno bueno, miren quien se me une al club de los ancianitos, nada menos que la mejor chiquita labio del mundo 😂 "
+var cumple =
+
+"Bueno bueno bueno, miren quien se me une al club de los ancianitos, nada menos que la mejor chiquita labio del mundo 😂 "
 +
 "<br><br> Primero que nada te quiero decir, muy feliz cumple locucha mia y espero que la pases de 10 en este hermoso dia!"
 +

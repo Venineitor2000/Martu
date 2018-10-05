@@ -19,3 +19,15 @@
    -1px 1px 0 #fff,
     1px 1px 0 #fff;
 }
+
+body
+{
+  animation-name: Animacion;
+  animation-duration: 5s;
+}
+
+@keyframes Animacion
+{
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
