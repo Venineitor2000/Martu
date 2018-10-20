@@ -3,11 +3,35 @@
   <head>
     <meta charset=utf-8>
     <style id = css>
+      #Comenzar_Boton
+      {
+        color:  #D500FF   ;
+        background: radial-gradient(#F000FF, #2D5EB4);
+        font-size:200%;
+        display: table-cell;
+        vertical-align: middle;
+        text-shadow:
+         -1px -1px 0 white,
+          1px -1px 0 white,
+         -1px 1px 0 white,
+          1px 1px 0 white;
+      }
+      #Comenzar_Parrafo
+      {
+        color: gold;
+        font-size:500%;
+        text-align: center;
+        text-shadow:
+         -1px -1px 0 #000,
+          1px -1px 0 #000,
+         -1px 1px 0 #000,
+          1px 1px 0 #000;
+      }
       img
       {
         height: 30%
       }
-      p
+      #Cumple_parrafo
       {
         color: gold;
         text-align: center;
@@ -44,7 +68,7 @@
         animation-duration: 10s;
         position: absolute;
         top: 500px;
-        left: 25px;
+        left: 0px;
         opacity: 0;
       }
       #Cumple_2
@@ -53,7 +77,7 @@
         animation-duration: 10s;
         position: absolute;
         top: 500px;
-        left: 25px;
+        left: 0px;
         opacity: 0;
       }
       #Cumple_3
@@ -70,7 +94,7 @@
         animation-duration: 10s;
         position: absolute;
         top: 500px;
-        left: 25px;
+        left: 0px;
         opacity: 0;
       }
       #Cumple_5
@@ -79,7 +103,7 @@
         animation-duration: 10s;
         position: absolute;
         top: 500px;
-        left: 25px;
+        left: 0px;
       }
       #Cumple_5:active
       {
@@ -127,30 +151,54 @@
     </style>
     <title></title>
   </head>
-  <body id = HTML>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <body>
+    <div id = HTML>
+      <p id = Comenzar_Parrafo>
+        <br><br><br><br><br><br><br>
+        <input type="button" value="🤫🎁🤫" onclick="Cumple_Boton_Comenzo()" id = Comenzar_Boton>
+        <br><br><br><br><br><br><br><br><br><br><br>
+    </p>
+    </div>
 
-      <img src = 1_Cumple.png id = Cumple_1>
-      <img src = 2_Cumple.png id = Cumple_2>
-      <img src = 3_Cumple.png id = Cumple_3>
-      <img src = 4_Cumple.png id = Cumple_4>
-      <img src = 5_Cumple.png id = Cumple_5>
-      <input type = button id = Cumple_Boton onclick=Cumple_Boton()>
-      <input type = button onclick="Pepe()"></input>
       <audio src = C_Musica_Fondo.mp3 autoplay preload=auto id = Cumple_Musica>
         <source src=C_Musica_Fondo.mp3>
         <source src=C_Musica_Fondo.wav>
       </audio>
-      <p id = Cumple_parrafo>
-        <br>
-      </p>
 
      <script>
-     function Pepe()
+     //Reproduce el sonido, y hace que comienze toda la animacion
+     function Cumple_Boton_Comenzo()
      {
-       Cumple_Musica.play()
+       Cumple_Musica.play();
+
+       Cumple_Comenzo = true;
+
+       HTML.innerHTML =
+
+"       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>"
++
+"       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>"
++
+"         <img src = 1_Cumple.png id = Cumple_1>"
++
+"         <img src = 2_Cumple.png id = Cumple_2>"
++
+"         <img src = 3_Cumple.png id = Cumple_3>"
++
+"         <img src = 4_Cumple.png id = Cumple_4>"
++
+"         <img src = 5_Cumple.png id = Cumple_5>"
++
+"         <input type = button id = Cumple_Boton onclick=Cumple_Boton()>"
++
+"         <p>"
++
+"           <br><br><br><br><br><br>"
++
+"         </p>"
+;
      }
+        var Cumple_Comenzo;
         var Cumple_Time = 0;
         var Cumple_Boton_On = false;
         var Cumple_mensaje =
@@ -181,26 +229,21 @@
           }
         }
 
-        function Reproducir()
-        {
-          Cumple_Musica.play();
-        }
-
         setInterval(function ()
         {
-          Cumple_Musica.addEventListener("canplay", Reproducir())
           if(Cumple_Time >= 10 && Cumple_Boton_On == true)
           {
             Cumple_Time = 0;
           }
           if(Cumple_Time == 1.75 && Cumple_Boton_On == true)
           {
-            Cumple_Musica_Momento = Cumple_Musica.currentTime; //Almacena el momento en el que esta la reproduccion de la cancion
-            HTML.innerHTML ="<p>"+Cumple_mensaje+"</p>" + "<audio src = C_Musica_Fondo.mp3 autoplay preload=auto id = Cumple_Musica> <source src=C_Musica_Fondo.mp3> <source src=C_Musica_Fondo.wav> </audio>";
-            Cumple_Musica.currentTime = Cumple_Musica_Momento; //Hace que la cancion que se reinicio al re escribir el HTML arranque desde donde estaba
+            HTML.innerHTML ="<p  id = Cumple_parrafo>"+Cumple_mensaje+"</p>";
             Cumple_Boton_On = false;
           }
-          Cumple_Time = Cumple_Time + 0.25;
+          if(Cumple_Comenzo == true)
+          {
+            Cumple_Time = Cumple_Time + 0.25;
+          }
         }, 250);
      </script>
      <script src = ../Contador.js></script>
