@@ -8,8 +8,8 @@ var meses = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; //Cantidad de dias
 var mes_deseado = [10, 10];
 var dia_deseado = [20, 31];
 
-var paginas = ["Cumple"]
-var fondo = ["cyan, purple", "#1A8F8B, #FF0080"]
+var paginas = ["Cumple", "Hallowen"];
+var fondo = ["cyan, purple", "#1A8F8B, #FF0080"];
 
 var fecha_proxima; //Representa la ubicacion de los array (dia_deseado, mes_deseado, mensajes) para saber cuales tomar para los calculos
 
