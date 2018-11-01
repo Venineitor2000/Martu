@@ -5,11 +5,11 @@ var Contador_Horas = document.getElementById("Horas")
 
 var meses = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; //Cantidad de dias que tiene cada mes del año
 
-var mes_deseado = [10, 10];
-var dia_deseado = [20, 31];
+var mes_deseado = [10, 10, 12];
+var dia_deseado = [20, 31, 24];
 
 var paginas = ["Cumple", "Hallowen"];
-var fondo = ["cyan, purple", "#1A8F8B, #FF0080"];
+var fondo = ["cyan, purple", "#1A8F8B, #FF0080", "#79FFFB, #A00000"];
 
 var fecha_proxima; //Representa la ubicacion de los array (dia_deseado, mes_deseado, mensajes) para saber cuales tomar para los calculos
 
