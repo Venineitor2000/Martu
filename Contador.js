@@ -1,7 +1,7 @@
 var meses = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; //Cantidad de dias que tiene cada mes del año
 
-var mes_deseado = [10, 10];
-var dia_deseado = [20, 31];
+var mes_deseado = [10, 10, 12];
+var dia_deseado = [20, 31, 25];
 
 var fecha_proxima; //Representa la ubicacion de los array (dia_deseado, mes_deseado, mensajes) para saber cuales tomar para los calculos
 
