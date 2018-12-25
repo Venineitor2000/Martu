@@ -1,7 +1,7 @@
 var device = navigator.userAgent; //Esta variable es para despues comprobar si se esta en celu o no
 var css = document.getElementById("Estilo");
-var Contador_Dias = document.getElementById("Dias")
-var Contador_Horas = document.getElementById("Horas")
+var Contador_Dias = document.getElementById("Dias");
+var Contador_Horas = document.getElementById("Horas");
 
 var meses = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; //Cantidad de dias que tiene cada mes del año
 
