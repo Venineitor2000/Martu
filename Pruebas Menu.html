@@ -1,0 +1,115 @@
+<html>
+	<head>
+		<title>Menu Desplegable</title>
+		<style type="text/css">
+
+			#Menu_Recuerdos
+			{
+				padding:0px;
+				transform: translateX(100%);
+				width:500px;
+				font-family:Arial, Helvetica, sans-serif;
+				text-shadow:
+				 -1px -1px 0 blue,
+					1px -1px 0 blue,
+				 -1px 1px 0 blue,
+					1px 1px 0 blue;
+			}
+
+			ul, ol
+			{
+				padding:0px;
+				list-style:none;
+			}
+
+			.nav > li
+			{
+				float:left;
+				display: table-cell;
+				vertical-align: middle;
+			}
+
+			.nav li a
+			{
+				background: radial-gradient(#F000FF, #2D5EB4);
+				color:white;
+				text-decoration:none;
+				padding:10px 12px;
+				display: table-cell;
+				vertical-align: middle;
+			}
+
+			.nav li a:hover
+			{
+				background: radial-gradient(gold, red);
+				display: table-cell;
+				vertical-align: middle;
+			}
+
+			.nav li ul
+			{
+				display:none;
+				position:absolute;
+				min-width:140px;
+			}
+
+			.nav li:hover > ul
+			{
+				display: table-cell;
+				vertical-align: middle;
+			}
+
+			.nav li ul li
+			{
+				position:relative;
+				display: table-cell;
+				vertical-align: middle;
+			}
+
+			.nav li ul li ul
+			{
+				right:-140px;
+				top:0px;
+				display: table-cell;
+				vertical-align: middle;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="Menu_Recuerdos">
+			<ul class="nav">
+				<li><a href="">Cumpleaños</a>
+					<ul>
+						<li><a href="Cumple_2018/Cumple_Celu.html">2018</a></li>
+					</ul>
+				</li>
+				<li><a href="">Hallowen</a>
+					<ul>
+						<li><a href="Hallowen_2018/Hallowen_Celu.html">2018</a></li>
+					</ul>
+				</li>
+				<li><a href="">Navidad</a>
+					<ul>
+						<li><a href="Navidad_2018/Navidad_Celu.html">2018</a></li>
+					</ul>
+				</li>
+				<li><a href="">Poesias</a>
+					<ul>
+						<li><a href="index.html">El diamante mas brillante</a></li>
+					</ul>
+				</li>
+				<li><a href="">Rap</a>
+					<ul>
+						<li><a href="index.html">Yeyuno Rap</a></li>
+					</ul>
+				</li>
+				<li><a href="">Videos</a>
+					<ul>
+						<li><a href="index.html">Primer Aniversario</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

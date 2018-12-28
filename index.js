@@ -2,6 +2,7 @@ var device = navigator.userAgent; //Esta variable es para despues comprobar si s
 var css = document.getElementById("Estilo");
 var Contador_Dias = document.getElementById("Dias");
 var Contador_Horas = document.getElementById("Horas");
+var Menu = document.getElementById("Menu_Recuerdos");
 
 var meses = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; //Cantidad de dias que tiene cada mes del año
 
@@ -146,6 +147,10 @@ if(dias_faltantes == 1)
   "#Dias{font-size:1000%; color: gold; text-align: center; text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;}"
   +
   "#Horas{opacity: 1; color: blue; text-align: center; font-size: 500%; text-shadow:-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;}"
+  +
+  "#Menu_Recuerdos{padding:0px;transform: translateX(100%);width:500px;font-family:Arial, Helvetica, sans-serif;text-shadow:-1px -1px 0 blue,1px -1px 0 blue,-1px 1px 0 blue,1px 1px 0 blue;}ul, ol{padding:0px;list-style:none;}.nav > li{float:left;display: table-cell;vertical-align: middle;}.nav li a{background: radial-gradient(#F000FF, #2D5EB4);color:white;text-decoration:none;padding:10px 12px;display: table-cell;vertical-align: middle;}.nav li a:hover{background: radial-gradient(gold,"
+  +
+    "red);display: table-cell;vertical-align: middle;}.nav li ul{display:none;position:absolute;min-width:140px;}.nav li:hover > ul{display: table-cell;vertical-align: middle;}.nav li ul li{position:relative;display: table-cell;vertical-align: middle;}.nav li ul li ul{right:-140px;top:0px;display: table-cell;vertical-align: middle;}"
 }
 else
 {
@@ -156,6 +161,10 @@ else
   "#Dias{font-size:1000%; color: gold; text-align: center; text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;}"
   +
   "#Horas{opacity: 0; color: blue; text-align: center; font-size: 500%; text-shadow:-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;}"
+  +
+  "#Menu_Recuerdos{padding:0px;transform: translateX(100%);width:500px;font-family:Arial, Helvetica, sans-serif;text-shadow:-1px -1px 0 blue,1px -1px 0 blue,-1px 1px 0 blue,1px 1px 0 blue;}ul, ol{padding:0px;list-style:none;}.nav > li{float:left;display: table-cell;vertical-align: middle;}.nav li a{background: radial-gradient(#F000FF, #2D5EB4);color:white;text-decoration:none;padding:10px 12px;display: table-cell;vertical-align: middle;}.nav li a:hover{background: radial-gradient(gold,"
+  +
+    "red);display: table-cell;vertical-align: middle;}.nav li ul{display:none;position:absolute;min-width:140px;}.nav li:hover > ul{display: table-cell;vertical-align: middle;}.nav li ul li{position:relative;display: table-cell;vertical-align: middle;}.nav li ul li ul{right:-140px;top:0px;display: table-cell;vertical-align: middle;}"
 }
 
 //Cambia la pagina a la de la fecha actual en version movil o compu segun el dispositivo
@@ -179,3 +188,15 @@ Contador_Horas.innerHTML = (24 - horas  - 1 ) + ":" + (60 - minutos) + ":" + (60
 Tiempo();
 
 setInterval(Tiempo, 1000)
+
+//MENU DE RECUERDOS
+if (device.match(/Iphone/i)|| device.match(/Ipod/i)|| device.match(/Android/i)|| device.match(/J2ME/i)|| device.match(/BlackBerry/i)|| device.match(/iPhone|iPad|iPod/i)|| device.match(/Opera Mini/i)|| device.match(/IEMobile/i)|| device.match(/Mobile/i)|| device.match(/Windows Phone/i)|| device.match(/windows mobile/i)|| device.match(/windows ce/i)|| device.match(/webOS/i)|| device.match(/palm/i)|| device.match(/bada/i)|| device.match(/series60/i)|| device.match(/nokia/i)|| device.match(/symbian/i)|| device.match(/HTC/i)|| device.match(/CriOS/i))
+ {
+   Menu.innerHTML =
+   "<ul class=nav><li><a href=>Cumpleaños</a><ul><li><a href=Cumple_2018/Cumple_Celu.html>2018</a></li></ul></li><li><a href=>Hallowen</a><ul><li><a href=Hallowen_2018/Hallowen_Celu.html>2018</a></li></ul></li><li><a href=>Navidad</a><ul><li><a href=Navidad_2018/Navidad_Celu.html>2018</a></li></ul></li>"
+ }
+else
+{
+  Menu.innerHTML =
+  "<ul class=nav><li><a href=>Cumpleaños</a><ul><li><a href=Cumple_2018/Cumple_Compu.html>2018</a></li></ul></li><li><a href=>Hallowen</a><ul><li><a href=Hallowen_2018/Hallowen_Compu.html>2018</a></li></ul></li><li><a href=>Navidad</a><ul><li><a href=Navidad_2018/Navidad_Compu.html>2018</a></li></ul></li>"
+}

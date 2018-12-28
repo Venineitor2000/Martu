@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  <style media="screen">
+  #Regalo_Boton_1
+  {
+    z-index: 1;
+    opacity: 0;
+    width: 34%;
+    height: 1000px;
+  }
+  #Regalo_Boton_2
+  {
+    z-index: 1;
+    opacity: 0;
+    width: 24%;
+    height: 1000px;
+  }
+  #Regalo_Boton_3
+  {
+    z-index: 1;
+    width: 41%;
+    height: 1000px;
+    opacity: 0;
+  }
+  body
+  {
+    background: radial-gradient(#79FFFB, #A00000);
+    margin: 0;
+  }
+  video
+  {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -2;
+  }
+  img
+  {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+    opacity: 0;
+  }
+  #Comenzar_Parrafo
+  {
+    color: gold;
+    font-size:500%;
+    text-align: center;
+    text-shadow:
+     -1px -1px 0 #000,
+      1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;
+      z-index: 2;
+  }
+  #Comenzar_Boton
+  {
+    color:  #D500FF   ;
+    background: radial-gradient(red, green);
+    font-size:200%;
+    display: table-cell;
+    vertical-align: middle;
+    text-shadow:
+     -1px -1px 0 white,
+      1px -1px 0 white,
+     -1px 1px 0 white,
+      1px 1px 0 white;
+      z-index: 2;
+  }
+  </style>
+  </head>
+  <body>
+    <div id = HTML>
+      <p id = Comenzar_Parrafo>
+        <input type="button" value="🎅" onclick="Navidad_Boton_Comenzo()" id = Comenzar_Boton>
+        <br><br><br><br><br><br><br><br><br><br><br>
+    </p>
+    </div>
+    <audio src = "Musica.mp3" preload="auto" loop id = "Navidad_Musica"></audio>
+    <video src = "Video 1.mp4" preload=auto id = "Navidad_Video"></video>
+    <div id = "Imagenes">
+      <img src="Imagen Estatica.jpg" id = "Navidad_Imagen_E">
+      <img src="Regalo con tapa 1.png" id = "Navidad_Imagen_RCT1">
+      <img src="Regalo con tapa 2.png" id = "Navidad_Imagen_RCT2">
+      <img src="Regalo con tapa 3.png" id = "Navidad_Imagen_RCT3">
+      <img src="Regalo sin tapa 1.png" id = "Navidad_Imagen_RST1">
+      <img src="Regalo sin tapa 2.png" id = "Navidad_Imagen_RST2">
+      <img src="Regalo sin tapa 3.png" id = "Navidad_Imagen_RST3" class = P>
+    </div>
+    <img src="" id = "Mensaje">
+
+    <input type = button id = Regalo_Boton_1 onclick="Abriendo_1()"></input>
+    <input type = button id = Regalo_Boton_2 onclick="Abriendo_2()"></input>
+    <input type = button id = Regalo_Boton_3 onclick="Abriendo_3()"></input>
+
+    <script>
+      var termino_1 = false;
+      var termino_2 = true;
+      var termino_3 = true;
+      var termino_4 = true;
+      var abrir = false; //Si se puede abrir o no regalos
+      var abierto_1 = false;
+      var abierto_2 = false;
+      var abierto_3 = false;
+      var tiempo_mensaje = 0;
+      var duracion_mensaje = 10;
+      var pausa_mensaje_final = 3;
+      function Navidad_Boton_Comenzo()
+      {
+        Navidad_Musica.play();
+        Navidad_Video.play();
+        HTML.innerHTML = "";
+      }
+      setInterval(function() //Revisa si el video ya termino
+      {
+        if(Navidad_Video.currentTime == 20.6 && termino_1 == false)
+        {
+          termino_1 = true;
+          tiempo_mensaje = 0;
+          Mensaje.src = "Bug_1.png"; //Primer imagen
+          Mensaje.style.opacity = 1;
+          var intervalo_1 = setInterval(function() //Contador de tiempo del mensaje
+          {
+            tiempo_mensaje++;
+            if(tiempo_mensaje == 1) //Cambio de imagen
+            {
+              Mensaje.src = "Bug_2.png"; //Segunda imagen
+            }
+            else if(tiempo_mensaje == 2) //Cambio de imagen
+            {
+              Mensaje.src = "Mensaje_1_1.jpg"; //Segunda imagen
+            }
+            else if(tiempo_mensaje == 2 + duracion_mensaje * 2) //Cambio de imagen
+            {
+              Mensaje.src = "Bug_2.png"; //Segunda imagen
+            }
+            else if(tiempo_mensaje == 3 + duracion_mensaje * 2) //Cambio de imagen
+            {
+              Mensaje.src = "Mensaje_1_2.jpg"; //Segunda imagen
+            }
+            else if(tiempo_mensaje == 3 + duracion_mensaje * 3) //Termina el mensaje
+            {
+              abrir = true;
+              Mensaje.style.opacity = 0;
+              Navidad_Imagen_E.style.opacity = 1;
+              Navidad_Imagen_RCT1.style.opacity = 1;
+              Navidad_Imagen_RCT2.style.opacity = 1;
+              Navidad_Imagen_RCT3.style.opacity = 1;
+              Navidad_Imagen_RST1.style.opacity = 1;
+              Navidad_Imagen_RST2.style.opacity = 1;
+              Navidad_Imagen_RST3.style.opacity = 1;
+              Mensaje.src = "Bug_2.png";
+              clearInterval(intervalo_1);
+            }
+          }, 1000);
+        }
+      }, 1);
+      function Abriendo_1()
+      {
+        if(abrir)
+        {
+          Navidad_Imagen_E.style.opacity = 0;
+          Navidad_Imagen_RCT1.style.opacity = 0;
+          Navidad_Imagen_RCT2.style.opacity = 0;
+          Navidad_Imagen_RCT3.style.opacity = 0;
+          Navidad_Imagen_RST1.style.opacity = 0;
+          Navidad_Imagen_RST2.style.opacity = 0;
+          Navidad_Imagen_RST3.style.opacity = 0;
+          abrir = false;
+          termino_2 = false;
+          if(abierto_1 == false)
+          {
+            Navidad_Video.src = "Video 2 con tapa.mp4";
+          }
+          else
+          {
+            Navidad_Video.src = "Video 2 sin tapa.mp4";
+          }
+          Navidad_Video.play();
+        }
+      }
+      function Abriendo_2()
+      {
+        if(abrir)
+        {
+          Navidad_Imagen_E.style.opacity = 0;
+          Navidad_Imagen_RCT1.style.opacity = 0;
+          Navidad_Imagen_RCT2.style.opacity = 0;
+          Navidad_Imagen_RCT3.style.opacity = 0;
+          Navidad_Imagen_RST1.style.opacity = 0;
+          Navidad_Imagen_RST2.style.opacity = 0;
+          Navidad_Imagen_RST3.style.opacity = 0;
+          abrir = false;
+          termino_3 = false;
+          if(abierto_2 == false)
+          {
+            Navidad_Video.src = "Video 3 con tapa.mp4";
+          }
+          else
+          {
+            Navidad_Video.src = "Video 3 sin tapa.mp4";
+          }
+          Navidad_Video.play();
+        }
+      }
+      function Abriendo_3()
+      {
+        if(abrir)
+        {
+          Navidad_Imagen_E.style.opacity = 0;
+          Navidad_Imagen_RCT1.style.opacity = 0;
+          Navidad_Imagen_RCT2.style.opacity = 0;
+          Navidad_Imagen_RCT3.style.opacity = 0;
+          Navidad_Imagen_RST1.style.opacity = 0;
+          Navidad_Imagen_RST2.style.opacity = 0;
+          Navidad_Imagen_RST3.style.opacity = 0;
+          abrir = false;
+          termino_4 = false;
+          if(abierto_3 == false)
+          {
+            Navidad_Video.src = "Video 4 con tapa.mp4";
+          }
+          else
+          {
+            Navidad_Video.src = "Video 4 sin tapa.mp4";
+          }
+          Navidad_Video.play();
+        }
+      }
+      setInterval(function() //Revisa si el video 2 ya termino
+      {
+        if(!abierto_1)
+        {
+          if(Navidad_Video.currentTime == 29.2 && termino_2 == false)
+          {
+            abierto_1 = true;
+            Navidad_Imagen_E.style.opacity = 1;
+            if(!abierto_1)
+            {
+              Navidad_Imagen_RCT1.style.opacity = 1;
+            }
+            else
+            {
+              Navidad_Imagen_RST1.style.opacity = 1;
+            }
+            if(!abierto_2)
+            {
+              Navidad_Imagen_RCT2.style.opacity = 1;
+            }
+            else
+            {
+              Navidad_Imagen_RST2.style.opacity = 1;
+            }
+            if(!abierto_3)
+            {
+              Navidad_Imagen_RCT3.style.opacity = 1;
+            }
+            else
+            {
+              Navidad_Imagen_RST3.style.opacity = 1;
+            }
+            termino_2 = true;
+            tiempo_mensaje = 0;
+            Mensaje.src = "Mensaje_2_1.jpg"; //Primera Imagen
+            Mensaje.style.opacity = 1;
+            var intervalo_2_a = setInterval(function() //Contador de tiempo del mensaje
+            {
+              tiempo_mensaje++;
+              if(tiempo_mensaje == duracion_mensaje * 2) //Cambio de imagen
+              {
+                Mensaje.src = "Mensaje_2_2.jpg"; //Segunda imagen
+              }
+              else if(tiempo_mensaje == duracion_mensaje * 3) //Terminar Mensaje
+              {
+                abrir = true;
+                Mensaje.style.opacity = 0;
+                Mensaje.src = "Bug_2.png";
+                clearInterval(intervalo_2_a);
+              }
+            }, 1000);
+          }
+        }
+        else
+        {
+          if(Navidad_Video.currentTime == 28.2 && termino_2 == false)
+          {
+            Navidad_Imagen_E.style.opacity = 1;
+            if(!abierto_1)
+            {
+              Navidad_Imagen_RCT1.style.opacity = 1;
+            }
+            else
+            {
+              Navidad_Imagen_RST1.style.opacity = 1;
+            }
+            if(!abierto_2)
+            {
+              Navidad_Imagen_RCT2.style.opacity = 1;
+            }
+            else
+            {
+              Navidad_Imagen_RST2.style.opacity = 1;
+            }
+            if(!abierto_3)
+            {
+              Navidad_Imagen_RCT3.style.opacity = 1;
+            }
+            else
+            {
+              Navidad_Imagen_RST3.style.opacity = 1;
+            }
+            termino_2 = true;
+            tiempo_mensaje = 0;
+            Mensaje.src = "Mensaje_2_1.jpg"; //Primer imagen
+            Mensaje.style.opacity = 1;
+            var intervalo_2_b = setInterval(function() //Contador de tiempo del mensaje
+            {
+              tiempo_mensaje++;
+              if(tiempo_mensaje == duracion_mensaje * 2) //Cambio de imagen
+              {
+                Mensaje.src = "Mensaje_2_2.jpg"; //Segunda imagen
+              }
+              else if(tiempo_mensaje == duracion_mensaje * 3)
+              {
+                abrir = true;
+                Mensaje.style.opacity = 0;
+                Mensaje.src = "Bug_2.png";
+                clearInterval(intervalo_2_b);
+              }
+            }, 1000);
+          }
+        }
+      }, 1);
+      setInterval(function() //Revisa si el video 3 ya termino
+      {
+        if(!abierto_2)
+        {
+          if(Navidad_Video.currentTime == 30.7 && termino_3 == false)
+          {
+            abierto_2 = true;
+            Navidad_Imagen_E.style.opacity = 1;
+            if(!abierto_1)
+            {
+              Navidad_Imagen_RCT1.style.opacity = 1;
+            }
+            else
+            {
+              Navidad_Imagen_RST1.style.opacity = 1;
+            }
+            if(!abierto_2)
+            {
+              Navidad_Imagen_RCT2.style.opacity = 1;
+            }
+            else
+            {
+              Navidad_Imagen_RST2.style.opacity = 1;
+            }
+            if(!abierto_3)
+            {
+              Navidad_Imagen_RCT3.style.opacity = 1;
+            }
+            else
+            {
+              Navidad_Imagen_RST3.style.opacity = 1;
+            }
+            termino_3 = true;
+            tiempo_mensaje = 0;
+            Mensaje.src = "Mensaje_3_1.jpg"; //Primera imagen
+            Mensaje.style.opacity = 1;
+            var intervalo_3_a = setInterval(function() //Contador de tiempo del mensaje
+            {
+              tiempo_mensaje++;
+              if(tiempo_mensaje == duracion_mensaje * 2) //Cambio de imagen
+              {
+                Mensaje.src = "Mensaje_3_2.jpg"; //Segunda imagen
+              }
+              else if(tiempo_mensaje == duracion_mensaje * 3) //Cambio de imagen
+              {
+                Mensaje.src = "Mensaje_3_3.jpg"; //Tercera imagen
+              }
+              else if(tiempo_mensaje == duracion_mensaje * 4)
+              {
+                abrir = true;
+                Mensaje.style.opacity = 0;
+                Mensaje.src = "Bug_2.png";
+                clearInterval(intervalo_3_a);
+              }
+            }, 1000);
+          }
+        }
+        else
+        {
+          if(Navidad_Video.currentTime == 29.7 && termino_3 == false)
+          {
+            Navidad_Imagen_E.style.opacity = 1;
+            if(!abierto_1)
+            {
+              Navidad_Imagen_RCT1.style.opacity = 1;
+            }
+            else
+            {
+              Navidad_Imagen_RST1.style.opacity = 1;
+            }
+            if(!abierto_2)
+            {
+              Navidad_Imagen_RCT2.style.opacity = 1;
+            }
+            else
+            {
+              Navidad_Imagen_RST2.style.opacity = 1;
+            }
+            if(!abierto_3)
+            {
+              Navidad_Imagen_RCT3.style.opacity = 1;
+            }
+            else
+            {
+              Navidad_Imagen_RST3.style.opacity = 1;
+            }
+            termino_3 = true;
+            tiempo_mensaje = 0;
+            Mensaje.src = "Mensaje_3_1.jpg";//Primera imagen
+            Mensaje.style.opacity = 1;
+            var intervalo_3_b = setInterval(function() //Contador de tiempo del mensaje
+            {
+              tiempo_mensaje++;
+              if(tiempo_mensaje == duracion_mensaje * 2) //Cambio de imagen
+              {
+                Mensaje.src = "Mensaje_3_2.jpg"; //Segunda imagen
+              }
+              else if(tiempo_mensaje == duracion_mensaje * 3) //Cambio de imagen
+              {
+                Mensaje.src = "Mensaje_3_3.jpg"; //Tercera imagen
+              }
+              else if(tiempo_mensaje == duracion_mensaje * 4)
+              {
+                abrir = true;
+                Mensaje.style.opacity = 0;
+                Mensaje.src = "Bug_2.png";
+                clearInterval(intervalo_3_b);
+              }
+            }, 1000);
+          }
+        }
+      }, 1);
+      setInterval(function() //Revisa si el video 4 ya termino
+      {
+        if(!abierto_3)
+        {
+          if(Navidad_Video.currentTime == 25.2 && termino_4 == false)
+          {
+            abierto_3 = true;
+            Navidad_Imagen_E.style.opacity = 1;
+            if(!abierto_1)
+            {
+              Navidad_Imagen_RCT1.style.opacity = 1;
+            }
+            else
+            {
+              Navidad_Imagen_RST1.style.opacity = 1;
+            }
+            if(!abierto_2)
+            {
+              Navidad_Imagen_RCT2.style.opacity = 1;
+            }
+            else
+            {
+              Navidad_Imagen_RST2.style.opacity = 1;
+            }
+            if(!abierto_3)
+            {
+              Navidad_Imagen_RCT3.style.opacity = 1;
+            }
+            else
+            {
+              Navidad_Imagen_RST3.style.opacity = 1;
+            }
+            termino_4 = true;
+            tiempo_mensaje = 0;
+            Mensaje.src = "Mensaje_4_1.jpg"; //Primer imagen
+            Mensaje.style.opacity = 1;
+            var intervalo_4_a = setInterval(function() //Contador de tiempo del mensaje
+            {
+              tiempo_mensaje++;
+              if(tiempo_mensaje == duracion_mensaje * 2) //Cambio de imagen
+              {
+                Mensaje.src = "Mensaje_4_2.jpg"; //Segunda imagen
+              }
+              else if(tiempo_mensaje == duracion_mensaje * 3) //Cambio de imagen
+              {
+                Mensaje.src = "Mensaje_4_3.jpg"; //Tercera imagen
+              }
+              else if(tiempo_mensaje == duracion_mensaje * 4)
+              {
+                abrir = true;
+                Mensaje.style.opacity = 0;
+                Mensaje.src = "Bug_2.png";
+                clearInterval(intervalo_4_a);
+              }
+            }, 1000);
+          }
+        }
+        else
+        {
+          if(Navidad_Video.currentTime == 24.2 && termino_4 == false)
+          {
+            Navidad_Imagen_E.style.opacity = 1;
+            if(!abierto_1)
+            {
+              Navidad_Imagen_RCT1.style.opacity = 1;
+            }
+            else
+            {
+              Navidad_Imagen_RST1.style.opacity = 1;
+            }
+            if(!abierto_2)
+            {
+              Navidad_Imagen_RCT2.style.opacity = 1;
+            }
+            else
+            {
+              Navidad_Imagen_RST2.style.opacity = 1;
+            }
+            if(!abierto_3)
+            {
+              Navidad_Imagen_RCT3.style.opacity = 1;
+            }
+            else
+            {
+              Navidad_Imagen_RST3.style.opacity = 1;
+            }
+            termino_4 = true;
+            tiempo_mensaje = 0;
+            Mensaje.src = "Mensaje_4_1.jpg";
+            Mensaje.style.opacity = 1;
+            var intervalo_4_b = setInterval(function() //Contador de tiempo del mensaje
+            {
+              tiempo_mensaje++;
+              if(tiempo_mensaje == duracion_mensaje * 2) //Cambio de imagen
+              {
+                Mensaje.src = "Mensaje_4_2.jpg"; //Segunda imagen
+              }
+              else if(tiempo_mensaje == duracion_mensaje * 3) //Cambio de imagen
+              {
+                Mensaje.src = "Mensaje_4_3.jpg"; //Tercera imagen
+              }
+              else if(tiempo_mensaje == duracion_mensaje * 4)
+              {
+                abrir = true;
+                Mensaje.style.opacity = 0;
+                Mensaje.src = "Bug_2.png";
+                clearInterval(intervalo_4_b);
+              }
+            }, 1000);
+          }
+        }
+      }, 1);
+      var intervalo_5_a = setInterval(function()
+      {
+        if(abierto_1 && abierto_2 && abierto_3 && abrir) //Esto comprobaria que ya estan abiertos los 3 regalos y aparte que el ultimo que se abrio ya mostro sus mensajes y por eso abrir es verdadera de nuevo
+        {
+          abrir = false;
+          tiempo_mensaje = 0;
+          Mensaje.src = "Mensaje_5_1.jpg"; //Primer imagen
+          Mensaje.style.opacity = 0; //Hace una pausa entre los mensajes del ultimo regalo que abriste hasta los de ahora
+          var intervalo_5_b = setInterval(function()
+          {
+            tiempo_mensaje++
+            if(tiempo_mensaje == pausa_mensaje_final) //Termina la pausa del mensaje
+            {
+              Mensaje.style.opacity = 1; //Empieza a mostrar el mensaje
+            }
+            else if(tiempo_mensaje == duracion_mensaje + pausa_mensaje_final) //Cambio de imagen
+            {
+              Mensaje.src = "Mensaje_5_2.jpg"; //Segunda imagen
+            }
+            else if(tiempo_mensaje == duracion_mensaje * 2 + pausa_mensaje_final) //Cambio de imagen
+            {
+              Mensaje.src = "Mensaje_5_3.jpg"; //Tercera imagen
+            }
+            else if(tiempo_mensaje == duracion_mensaje * 3 + pausa_mensaje_final) //Cambio de imagen
+            {
+              Mensaje.src = "Mensaje_5_4.jpg"; //Cuarta imagen
+            }
+            else if(tiempo_mensaje == duracion_mensaje * 4 + pausa_mensaje_final) //Fin mensaje
+            {
+              abrir = true;
+              Mensaje.style.opacity = 0;
+              Mensaje.src = "Bug_2.png";
+              clearInterval(intervalo_5_b);
+            }
+          },1000)
+          clearInterval(intervalo_5_a);
+        }
+      },1)
+    </script>
+  </body>
+</html>
