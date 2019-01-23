@@ -194,9 +194,72 @@ if (device.match(/Iphone/i)|| device.match(/Ipod/i)|| device.match(/Android/i)||
  {
    Menu.innerHTML =
    "<ul class=nav><li><a href=>Cumpleaños</a><ul><li><a href=Cumple_2018/Cumple_Celu.html>2018</a></li></ul></li><li><a href=>Hallowen</a><ul><li><a href=Hallowen_2018/Hallowen_Celu.html>2018</a></li></ul></li><li><a href=>Navidad</a><ul><li><a href=Navidad_2018/Navidad_Celu.html>2018</a></li></ul></li>"
+
+   //Seccion poesias
+  +
+  "<li><a href=>Poesias</a><ul>"
+  +
+  "<li><a href=Poesias/El_diamante_mas_brillante/Celu.html>El diamante mas brillante</a></li>"
+  +
+  "<li><a href=Poesias/Amistad_eterna/Celu.html>Amistad eterna</a></li>"
+  +
+  "<li><a href=Poesias/Cumple_17_original/Celu.html>Cumple 17 original</a></li>"
+  +
+  "<li><a href=Poesias/Cumple_17_final/Celu.html>Cumple 17 final</a></li>"
+  +
+  "<li><a href=Poesias/Lo_que_pienso_de_vos/Celu.html>Lo que pienso de vos</a></li>"
+  +
+  "<li><a href=Poesias/Primer_aniversario/Celu.html>Primer aniversario</a></li>"
+  +
+  "<li><a href=Poesias/Un_angel_como_mejor_amiga/Celu.html>Un angel como mejor amiga</a></li>"
+  +
+  "</ul></li>"
+
+   //Cierre menu
+   +
+   "</ul>"
  }
 else
 {
   Menu.innerHTML =
   "<ul class=nav><li><a href=>Cumpleaños</a><ul><li><a href=Cumple_2018/Cumple_Compu.html>2018</a></li></ul></li><li><a href=>Hallowen</a><ul><li><a href=Hallowen_2018/Hallowen_Compu.html>2018</a></li></ul></li><li><a href=>Navidad</a><ul><li><a href=Navidad_2018/Navidad_Compu.html>2018</a></li></ul></li>"
+
+//Separador de secciones
+  +
+  "<br><br><br><br>"
+
+  //Seccion poesias
+  +
+ "<li><a href=>Poesias</a><ul>"
+ +
+ "<li><a href=Poesias/El_diamante_mas_brillante/Compu.html>El diamante mas brillante</a></li>"
+ +
+ "<li><a href=Poesias/Amistad_eterna/Compu.html>Amistad eterna</a></li>"
+ +
+ "<li><a href=Poesias/Cumple_17_original/Compu.html>Cumple 17 original</a></li>"
+ +
+ "<li><a href=Poesias/Cumple_17_final/Compu.html>Cumple 17 final</a></li>"
+ +
+ "<li><a href=Poesias/Lo_que_pienso_de_vos/Compu.html>Lo que pienso de vos</a></li>"
+ +
+ "<li><a href=Poesias/Primer_aniversario/Compu.html>Primer aniversario</a></li>"
+ +
+ "<li><a href=Poesias/Un_angel_como_mejor_amiga/Compu.html>Un angel como mejor amiga</a></li>"
+ +
+ "</ul></li>"
+
+ //Seccion videos
+ +
+  "<li><a href=>Videos</a><ul>"
+  +
+  "<li><a href=Videos/Yeyuno_Rap/Compu_Celu.html>Yeyuno Rap</a></li>"
+  +
+  "<li><a href=Videos/Primer_Aniversario/Compu_Celu.html>Primer Aniversario</a></li>"
+  +
+  "</ul></li>"
+
+  //Cierre menu
+  +
+  "</ul>"
+;
 }
