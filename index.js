@@ -195,6 +195,10 @@ if (device.match(/Iphone/i)|| device.match(/Ipod/i)|| device.match(/Android/i)||
    Menu.innerHTML =
    "<ul class=nav><li><a href=>Cumpleaños</a><ul><li><a href=Cumple_2018/Cumple_Celu.html>2018</a></li></ul></li><li><a href=>Hallowen</a><ul><li><a href=Hallowen_2018/Hallowen_Celu.html>2018</a></li></ul></li><li><a href=>Navidad</a><ul><li><a href=Navidad_2018/Navidad_Celu.html>2018</a></li></ul></li>"
 
+   //Separador de secciones
+     +
+     "<br><br><br><br>"
+
    //Seccion poesias
   +
   "<li><a href=>Poesias</a><ul>"
@@ -215,9 +219,20 @@ if (device.match(/Iphone/i)|| device.match(/Ipod/i)|| device.match(/Android/i)||
   +
   "</ul></li>"
 
+  //Seccion videos
+  +
+   "<li><a href=>Videos</a><ul>"
+   +
+   "<li><a href=Videos/Yeyuno_Rap/Compu_Celu.html>Yeyuno Rap</a></li>"
+   +
+   "<li><a href=Videos/Primer_Aniversario/Compu_Celu.html>Primer Aniversario</a></li>"
+   +
+   "</ul></li>"
+
    //Cierre menu
    +
    "</ul>"
+   ;
  }
 else
 {
