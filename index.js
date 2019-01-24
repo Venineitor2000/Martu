@@ -223,9 +223,9 @@ if (device.match(/Iphone/i)|| device.match(/Ipod/i)|| device.match(/Android/i)||
   +
    "<li><a href=>Videos</a><ul>"
    +
-   "<li><a href=Videos/Yeyuno_Rap/Compu_Celu.html>Yeyuno Rap</a></li>"
+   "<li><a href=Videos/Primer_aniversario/Compu_Celu.html>Primer Aniversario</a></li>"
    +
-   "<li><a href=Videos/Primer_Aniversario/Compu_Celu.html>Primer Aniversario</a></li>"
+   "<li><a href=Videos/Yeyuno_Rap/Compu_Celu.html>Yeyuno Rap</a></li>"
    +
    "</ul></li>"
 
@@ -267,9 +267,9 @@ else
  +
   "<li><a href=>Videos</a><ul>"
   +
-  "<li><a href=Videos/Yeyuno_Rap/Compu_Celu.html>Yeyuno Rap</a></li>"
+  "<li><a href=Videos/Primer_aniversario/Compu_Celu.html>Primer Aniversario</a></li>"
   +
-  "<li><a href=Videos/Primer_Aniversario/Compu_Celu.html>Primer Aniversario</a></li>"
+  "<li><a href=Videos/Yeyuno_Rap/Compu_Celu.html>Yeyuno Rap</a></li>"
   +
   "</ul></li>"
 
