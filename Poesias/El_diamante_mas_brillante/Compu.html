@@ -21,6 +21,20 @@
         animation-name: Animacion;
         animation-duration: 5s;
       }
+
+      input
+      {
+        color:  gold   ;
+        background: radial-gradient(cyan, #2D5EB4);
+        font-size:200%;
+        display: table-cell;
+        vertical-align: middle;
+        text-shadow:
+         -1px -1px 0 black,
+          1px -1px 0 black,
+         -1px 1px 0 black,
+          1px 1px 0 black;
+      }
       @keyframes Animacion{0% {opacity: 0;}100% {opacity: 1;}}
     </style>
   </head>
@@ -280,6 +294,13 @@ Y en la espera del verdadero merecedor
 <br>
 De este gran tesoro, que vos sos
     </p>
+    <input type="button" name="Leer parte 2" value="Leer parte 2" onclick="Abrir()">
     <p><br><br><br><br><br><br><br><p>
+      <script>
+      function Abrir()
+      {
+          location.href ="../El_diamante_mas_brillante_2/Compu.html";
+      }
+      </script>
   </body>
 </html>

@@ -150,7 +150,7 @@ if(dias_faltantes == 1)
   +
   "#Menu_Recuerdos{padding:0px;transform: translateX(100%);width:500px;font-family:Arial, Helvetica, sans-serif;text-shadow:-1px -1px 0 blue,1px -1px 0 blue,-1px 1px 0 blue,1px 1px 0 blue;}ul, ol{padding:0px;list-style:none;}.nav > li{float:left;display: table-cell;vertical-align: middle;}.nav li a{background: radial-gradient(#F000FF, #2D5EB4);color:white;text-decoration:none;padding:10px 12px;display: table-cell;vertical-align: middle;}.nav li a:hover{background: radial-gradient(gold,"
   +
-    "red);display: table-cell;vertical-align: middle;}.nav li ul{display:none;position:absolute;min-width:140px;}.nav li:hover > ul{display: table-cell;vertical-align: middle;}.nav li ul li{position:relative;display: table-cell;vertical-align: middle;}.nav li ul li ul{right:-140px;top:0px;display: table-cell;vertical-align: middle;}"
+    "red);display: table-cell;vertical-align: middle;}.nav li ul{display:none;position:absolute;min-width:140px;}.nav li:hover > ul{display: table-cell;vertical-align: middle;}.nav li ul li{position:relative;display: table-cell;vertical-align: middle;}.nav li ul li ul{right:-60px;top:100px;vertical-align: middle;}"
 }
 else
 {
@@ -164,7 +164,7 @@ else
   +
   "#Menu_Recuerdos{padding:0px;transform: translateX(100%);width:500px;font-family:Arial, Helvetica, sans-serif;text-shadow:-1px -1px 0 blue,1px -1px 0 blue,-1px 1px 0 blue,1px 1px 0 blue;}ul, ol{padding:0px;list-style:none;}.nav > li{float:left;display: table-cell;vertical-align: middle;}.nav li a{background: radial-gradient(#F000FF, #2D5EB4);color:white;text-decoration:none;padding:10px 12px;display: table-cell;vertical-align: middle;}.nav li a:hover{background: radial-gradient(gold,"
   +
-    "red);display: table-cell;vertical-align: middle;}.nav li ul{display:none;position:absolute;min-width:140px;}.nav li:hover > ul{display: table-cell;vertical-align: middle;}.nav li ul li{position:relative;display: table-cell;vertical-align: middle;}.nav li ul li ul{right:-140px;top:0px;display: table-cell;vertical-align: middle;}"
+    "red);display: table-cell;vertical-align: middle;}.nav li ul{display:none;position:absolute;min-width:140px;}.nav li:hover > ul{display: table-cell;vertical-align: middle;}.nav li ul li{position:relative;display: table-cell;vertical-align: middle;}.nav li ul li ul{right:-60px;top:100px;vertical-align: middle;}"
 }
 
 //Cambia la pagina a la de la fecha actual en version movil o compu segun el dispositivo
@@ -203,7 +203,19 @@ if (device.match(/Iphone/i)|| device.match(/Ipod/i)|| device.match(/Android/i)||
   +
   "<li><a href=>Poesias</a><ul>"
   +
-  "<li><a href=Poesias/El_diamante_mas_brillante/Celu.html>El diamante mas brillante</a></li>"
+  //Saga del diamanete empieza
+  "<li><a href=>El diamante mas brillante |SAGA|</a>"
+  +
+  "<ul>"
+  +
+   "<li><a href=Poesias/El_diamante_mas_brillante/Celu.html>Parte 1</a></li>"
+   +
+   "<li><a href=Poesias/El_diamante_mas_brillante_2/Celu.html>Parte 2</a></li>"
+   +
+  "</ul>"
+ +
+  "</li>"
+  //Saga del diamanete termina
   +
   "<li><a href=Poesias/Amistad_eterna/Celu.html>Amistad eterna</a></li>"
   +
@@ -249,7 +261,19 @@ else
   +
  "<li><a href=>Poesias</a><ul>"
  +
- "<li><a href=Poesias/El_diamante_mas_brillante/Compu.html>El diamante mas brillante</a></li>"
+ //Saga del diamanete empieza
+ "<li><a href=>El diamante mas brillante |SAGA|</a>"
+ +
+ "<ul>"
+ +
+  "<li><a href=Poesias/El_diamante_mas_brillante/Compu.html>Parte 1</a></li>"
+  +
+  "<li><a href=Poesias/El_diamante_mas_brillante_2/Compu.html>Parte 2</a></li>"
+  +
+ "</ul>"
++
+ "</li>"
+ //Saga del diamanete termina
  +
  "<li><a href=Poesias/Amistad_eterna/Compu.html>Amistad eterna</a></li>"
  +
