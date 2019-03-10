@@ -193,7 +193,7 @@ setInterval(Tiempo, 1000)
 if (device.match(/Iphone/i)|| device.match(/Ipod/i)|| device.match(/Android/i)|| device.match(/J2ME/i)|| device.match(/BlackBerry/i)|| device.match(/iPhone|iPad|iPod/i)|| device.match(/Opera Mini/i)|| device.match(/IEMobile/i)|| device.match(/Mobile/i)|| device.match(/Windows Phone/i)|| device.match(/windows mobile/i)|| device.match(/windows ce/i)|| device.match(/webOS/i)|| device.match(/palm/i)|| device.match(/bada/i)|| device.match(/series60/i)|| device.match(/nokia/i)|| device.match(/symbian/i)|| device.match(/HTC/i)|| device.match(/CriOS/i))
  {
    Menu.innerHTML =
-   "<ul class=nav><li><a>Cumpleaños</a><ul><li><a href=Cumple_2018/Cumple_Celu.html>2018</a></li></ul></li><li><a>Hallowen</a><ul><li><a href=Hallowen_2018/Hallowen_Celu.html>2018</a></li></ul></li><li><a>Navidad</a><ul><li><a href=Navidad_2018/Navidad_Celu.html>2018</a></li></ul></li>"
+   "<ul class=nav><li><a href=>Cumpleaños</a><ul><li><a href=Cumple_2018/Cumple_Celu.html>2018</a></li></ul></li><li><a href=>Hallowen</a><ul><li><a href=Hallowen_2018/Hallowen_Celu.html>2018</a></li></ul></li><li><a href=>Navidad</a><ul><li><a href=Navidad_2018/Navidad_Celu.html>2018</a></li></ul></li>"
 
    //Separador de secciones
      +
@@ -201,10 +201,10 @@ if (device.match(/Iphone/i)|| device.match(/Ipod/i)|| device.match(/Android/i)||
 
    //Seccion poesias
   +
-  "<li><a>Poesias</a><ul>"
+  "<li><a href=>Poesias</a><ul>"
   +
   //Saga del diamanete empieza
-  "<li><a>El diamante mas brillante |SAGA|</a>"
+  "<li><a href=>El diamante mas brillante |SAGA|</a>"
   +
   "<ul>"
   +
@@ -233,7 +233,7 @@ if (device.match(/Iphone/i)|| device.match(/Ipod/i)|| device.match(/Android/i)||
 
   //Seccion videos
   +
-   "<li><a>Videos</a><ul>"
+   "<li><a href=>Videos</a><ul>"
    +
    "<li><a href=Videos/Primer_aniversario/Compu_Celu.html>Primer Aniversario</a></li>"
    +
