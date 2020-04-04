@@ -6,11 +6,11 @@ var Menu = document.getElementById("Menu_Recuerdos");
 
 var meses = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; //Cantidad de dias que tiene cada mes del año
 
-var mes_deseado = [9, 10, 10, 12];
-var dia_deseado = [3, 20, 31, 25];
+var mes_deseado = [5, 9, 10, 10, 12];
+var dia_deseado = [1, 3, 20, 31, 25];
 
-var paginas = ["Aniversario","Cumple", "Hallowen", "Navidad"];
-var fondo = ["pink, blue","cyan, purple", "#1A8F8B, #FF0080", "#79FFFB, #A00000"];
+var paginas = ["Sorpresa_Poesia","Aniversario","Cumple", "Hallowen", "Navidad"];
+var fondo = ["cyan, green","pink, blue","cyan, purple", "#1A8F8B, #FF0080", "#79FFFB, #A00000"];
 
 var fecha_proxima; //Representa la ubicacion de los array (dia_deseado, mes_deseado, mensajes) para saber cuales tomar para los calculos
 
